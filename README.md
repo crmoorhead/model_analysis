@@ -4,4 +4,8 @@ Tools for comparing the performance of a model using the test set, both statisti
 
 These include:
 
-- __confusion_matrix__
+- __Test Accuracy__
+- __Precision and Recall__
+- __Confusion Matrix__
+- __AUC plot__
+- __save_misclassifcations__
