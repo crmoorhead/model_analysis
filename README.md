@@ -4,7 +4,8 @@ Tools for comparing the performance of a model using the test set, both statisti
 
 These include:
 
-- __Test Accuracy__
+- __plot\_confusion\_matrix__(y_true,y_pred,classes,\*args, \*\*kwargs): Takes compulsory arguments of y\_pred, the true classifications, and y\_pred, the classifications predicted by the model and classes, the classes are the 
+
 - __Precision and Recall__
 - __Confusion Matrix__
 - __AUC plot__
