@@ -8,7 +8,10 @@ These include:
 
 The output to this model forms the basis for any further visualisations of the manner in which inputs are classified or misclassified. 
 
-- __plot\_confusion\_matrix__(y_true,y_pred,classes,\*args, \*\*kwargs): Takes compulsory arguments of y\_pred, the true classifications, and y\_pred, the classifications predicted by the model and classes, the classes are the 
+- __change_labels(io,"args")__: Takes a dictionary of the format of the input_output function and returns a dictionary mapping integer labels to class descriptions. There is only one optional argument "
+
+- __plot\_confusion\_matrix__(y_true,y_pred,classes,\*args, \*\*kwargs): Creates a Confusion Matrix plot using the output to the test\_model function above. There should also be an argument for changing the class labels from integers to whatever their original description was. 
+
 
 - __Precision and Recall__
 - __Confusion Matrix__
