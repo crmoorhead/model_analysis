@@ -3,6 +3,45 @@
 import cv2
 from dl_pipeline import *
 
+from keras.utils.vis_utils import plot_model
+
+def model_info(model,*args,**kwargs):
+    if "summary" in args:
+        print(model.summary())
+    if "layer_count" in args:
+        num_of_layers=len(model.layers)
+        print("Distinct named layers in",model.name,":",num_of_layers)
+    if "layer_names" in args:
+        print("Layer names for model:",model.name)
+        print()
+        layer_names = [layer.name for layer in model.layers]
+        for layer in layer_names:
+            print(layer)
+    if "diagram" in args:
+        if "save_dir" in kwargs:
+            save_path=kwargs["save_dir"]+"\\"+model.name+".png"
+        else:
+            save_path=model.name+".png"
+        if "display_tensors" in args:
+            if "display_names" in args:
+                plot_model(model,to_file=save_path, show_shapes=True, show_layer_names=True)
+            else:
+                plot_model(model, to_file=save_path + ".png", show_shapes=True, show_layer_names=False)
+
+        else:
+            if "display_names" in args:
+                plot_model(model, to_file=save_path + ".png", show_shapes=False, show_layer_names=True)
+            else:
+                plot_model(model, to_file=save_path + ".png", show_shapes=False, show_layer_names=False)
+    if "save_summaries" in args:
+        if "save_dir" in kwargs:
+            save_path=kwargs["save_dir"]+"\\"+model.name+".txt"
+        else:
+            save_path =model.name + ".txt"
+        f=open(save_path,"w")
+        model.summary(print_fn=lambda x: f.write(x + '\n'))
+        f.close()
+
 def test_model(ioTT,model,source_dir,*args,**kwargs):
     if str(model.__class__)=="<class 'keras.engine.training.Model'>":   # If model input is a Keras Model, we proceed as normal.
         if "exceptions_dir" in kwargs:
