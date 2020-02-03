@@ -1,7 +1,7 @@
 # model_analysis
 
 import cv2
-from dl_pipeline import *
+from cnn_pipeline import *
 
 from keras.utils.vis_utils import plot_model
 
