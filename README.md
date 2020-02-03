@@ -13,7 +13,7 @@ These include:
   - "alpha" sets the transparency of the bands around the mean results for each x-value and must have value between 0 and 1. Default is   0.5 
   - "colors" must be a list of string colour descriptions recognised by matplotlib. If not defined, the function can assign colours automatically for up to 7 different sets of experiments to be plotted on the same axes. 
   - "title" must be a string that will be the title of the plot.
- The function also accepts a number of optional arguments:
+The function also accepts a number of optional arguments:
   - "percentiles" will add a line for the lower and upper quartile values for each x-axis point.
   - "median" will add a line for median values for each x-axis point.
   - "std" will add lines for one standard deviation above and below the mean for each x-axis point.
